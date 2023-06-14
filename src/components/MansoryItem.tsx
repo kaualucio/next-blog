@@ -9,7 +9,7 @@ interface MansoryItem {
 
 export const MansoryItem = ({ colunms = 1}: MansoryItem) => {
   return (
-    <div className={`relative ${colunms === 1 ? 'col-span-1': 'col-span-2'} min-h-[300px] max-h-[300px] rounded-md group overflow-hidden `}>
+    <div className={`relative ${colunms === 1 ? 'col-span-1': 'col-span-1 md:col-span-2'} min-h-[270px] max-h-[270px] rounded-md group overflow-hidden `}>
       <div className="bg-[url('https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')] absolute w-full h-full transition-all duration-500 ease-in-out transform bg-center bg-cover group-hover:scale-105" />
       <div className="absolute top-0 left-0 z-40 w-full h-full bg-black bg-opacity-50" />
       <Link href="" className="block h-full relative z-50 p-5 text-text group">
