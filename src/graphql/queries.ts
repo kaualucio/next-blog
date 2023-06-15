@@ -6,21 +6,36 @@ query Articles {
     excerpt
     createdAt
     id
-    publishedAt
     slug
     title
     content {
       html
     }
     author {
-      id
       name
-      bio
       photo {
         url
       }
     }
+    image {
+      url
+    }
+    categories {
+      name
+    }
   }
 }
+`
 
+export const getAuthors = gql`
+  query Authors {
+  authors {
+    id
+    name
+    photo {
+      url
+    }
+    bio
+  }
+}
 `
