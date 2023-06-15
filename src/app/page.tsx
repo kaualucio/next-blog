@@ -54,6 +54,7 @@ export default async function Home() {
           </div>
           <div className="col-span-1 ">
             <Title label="Categorias"/>
+            {/* @ts-expect-error Server Component */}
             <Categories />
           </div>
 

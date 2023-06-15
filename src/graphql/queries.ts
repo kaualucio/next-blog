@@ -5,12 +5,8 @@ query Articles {
   posts {
     excerpt
     createdAt
-    id
     slug
     title
-    content {
-      html
-    }
     author {
       name
       photo {
@@ -41,7 +37,7 @@ export const getAuthors = gql`
 `
 
 export const getAllSlugPosts = gql`
-  query Authors {
+  query SlugPosts {
   posts {
     slug
   }
@@ -50,7 +46,7 @@ export const getAllSlugPosts = gql`
 
 export const getPostBySlug = gql`
   query GetPostBySlug($slug: String!) {
-    post(slug: $slug) {
+    post(where: { slug: $slug }) {
       createdAt
       id
       slug
@@ -67,3 +63,43 @@ export const getPostBySlug = gql`
     }
   }
 `
+
+export const getAllCategories = gql`
+  query GetAllCategories {
+    categories {
+      name
+      slug
+    }
+  }
+`
+
+export const getAllSlugCategories = gql`
+  query GetAllCategories {
+    categories {
+      slug
+    }
+  }
+`
+export const getPostsByCategory = gql`
+  query GetAllCategories($slug: String!) {
+    posts(where: {categories_some: {slug: $slug}}) {
+      excerpt
+      createdAt
+      slug
+      title
+      author {
+        name
+        photo {
+          url
+        }
+      }
+      image {
+        url
+      }
+      categories {
+        name
+      }
+    }
+  }
+`
+
