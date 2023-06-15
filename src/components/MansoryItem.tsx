@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link'
 import React from 'react'
 import { Calendar, Tag, Clock } from '@phosphor-icons/react'
@@ -5,15 +6,16 @@ import Image from 'next/image';
 
 interface MansoryItem {
   colunms?: 1 | 2;
+  rows?: 1 | 2
 }
 
-export const MansoryItem = ({ colunms = 1}: MansoryItem) => {
+export const MansoryItem = ({ colunms = 1, rows = 1}: MansoryItem) => {
   return (
-    <div className={`relative ${colunms === 1 ? 'col-span-1': 'col-span-1 md:col-span-2'} min-h-[270px] max-h-[270px] rounded-md group overflow-hidden `}>
+    <div className={`relative ${colunms === 1 ? 'col-span-1': 'col-span-1 md:col-span-2'} ${rows === 2 ? 'row-span-2' : 'row-span-1'} min-h-[270px] rounded-md group overflow-hidden`}>
       <div className="bg-[url('https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')] absolute w-full h-full transition-all duration-500 ease-in-out transform bg-center bg-cover group-hover:scale-105" />
-      <div className="absolute top-0 left-0 z-40 w-full h-full bg-black bg-opacity-50" />
+      <div className="absolute top-0 left-0 z-40 w-full h-full bg-gradient-to-t from-dark to-transparent" />
       <Link href="" className="block h-full relative z-50 p-5 text-text group">
-        <div className="h-full flex flex-col justify-between">
+        <div className="h-full flex flex-col justify-end gap-5">
           <div>
             <h2 className="text-text group-hover:text-secondary duration-200 text-3xl font-bold inline-block">Nome do artigo 123</h2>
             <div className="mt-2 flex flex-col gap-2">
@@ -43,7 +45,7 @@ export const MansoryItem = ({ colunms = 1}: MansoryItem) => {
               </div>
               <p className="text-sm">Kauã Lúcio</p>
             </div>
-            <div className="w-fit p-1 px-3 bg-primary text-text text-sm font-bold rounded-full">
+            <div className="relative z-[60] w-fit p-1 px-3 bg-primary text-text text-sm font-bold rounded-full">
               <p className="text-md font-medium">Desenvolviment Web</p>
             </div>
           </div>

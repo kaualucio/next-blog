@@ -3,7 +3,7 @@ import React from 'react'
 
 export const Author = () => {
   return (
-    <div className="p-5 bg-background2 rounded-md">
+    <div className="p-5 bg-[#fff] drop-shadow-xl rounded-md">
       <div className="w-full flex flex-col items-center gap-3 text-center">
         <div className="relative overflow-hidden w-24 h-24 rounded-full ">
           <Image 
@@ -13,8 +13,8 @@ export const Author = () => {
             className="rounded-full"
           />
         </div>
-        <p className="text-text text-md font-medium">Kauã Lúcio</p>
-        <p className="text-text text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique facere dolorem quidem quis eaque? Iusto maiores possimus magnam! Sapiente possimus corporis assumenda in doloremque, corrupti aperiam ipsum porro dolore iure.</p>
+        <p className="text-dark-gray text-md font-medium">Kauã Lúcio</p>
+        <p className="text-dark-gray text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique facere dolorem quidem quis eaque? Iusto maiores possimus magnam! Sapiente possimus corporis assumenda in doloremque, corrupti aperiam ipsum porro dolore iure.</p>
       </div>
     </div>
   )

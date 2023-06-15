@@ -15,10 +15,10 @@ export default async function Article() {
 
   return (
     <section className="py-10 px-5">
-      <div className="relative mx-auto w-full max-w-7xl grid grid-cols-1 min-[600px]:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="relative mx-auto w-full max-w-6xl grid grid-cols-1 min-[600px]:grid-cols-2 lg:grid-cols-3 gap-10">
         <div className="col-span-2">
           <Datetime />
-          <h1 className="mt-3 text-text text-3xl font-bold">Titulo do artigo</h1>
+          <h1 className="mt-3 text-dark-gray text-3xl font-bold">Titulo do artigo</h1>
           <div className="p-5 flex items-center justify-center">
             <Image 
               src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
@@ -28,7 +28,7 @@ export default async function Article() {
               className="rounded-xl" 
             />
           </div>
-          <div className="text-text text-md text-justify my-5">
+          <div className="text-dark-gray text-md text-justify my-5">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum sapien ut commodo auctor. Pellentesque ultrices purus libero. Nunc rhoncus posuere felis, in varius odio tincidunt at. Suspendisse convallis odio neque, ut condimentum ex aliquam sed. Sed fringilla ac massa vitae vestibulum. Suspendisse fermentum, ex ut aliquam varius, tortor neque sollicitudin felis, nec cursus magna orci non nisi. Ut ac tortor sed sapien molestie eleifend. Sed porttitor ligula sed purus ornare, sed sagittis diam dapibus. Praesent facilisis ultrices gravida. Sed iaculis nisl ac dignissim vestibulum. Morbi euismod nunc ipsum, sed ultrices massa sodales et.
             </p>
@@ -47,10 +47,10 @@ export default async function Article() {
           </div>
           <Author />
         </div>
-        <div className="sticky top-5 left-0 col-span-1 flex flex-col gap-7">
+        <div className="flex flex-col gap-7">
           <div>
             <Title label="Artigos relevantes" />
-            <div className="bg-background2 rounded-md overflow-hidden">
+            <div className="bg-white shadow-md rounded-md overflow-hidden">
               <AsideArticle />
               <AsideArticle />
               <AsideArticle />
