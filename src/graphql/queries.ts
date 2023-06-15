@@ -39,3 +39,31 @@ export const getAuthors = gql`
   }
 }
 `
+
+export const getAllSlugPosts = gql`
+  query Authors {
+  posts {
+    slug
+  }
+}
+`
+
+export const getPostBySlug = gql`
+  query GetPostBySlug($slug: String!) {
+    post(slug: $slug) {
+      createdAt
+      id
+      slug
+      title
+      content {
+        html
+      }
+      image {
+          url
+      }
+      categories {
+        name
+      }
+    }
+  }
+`

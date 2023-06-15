@@ -52,16 +52,11 @@ export default async function Home() {
              )) 
             }
           </div>
-          <div className="col-span-1 flex flex-col gap-7">
-            <div>
-              <Title label="Sobre o autor"/>
-              <Author />
-            </div>
-            <div>
-              <Title label="Categorias"/>
-              <Categories />
-            </div>
+          <div className="col-span-1 ">
+            <Title label="Categorias"/>
+            <Categories />
           </div>
+
         </div>
       </section>
     </>
