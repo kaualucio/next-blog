@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
-export const getAllArticles = gql`
+export const getThreeMoreRecentArticles = gql`
 query Articles {
-  posts {
+  posts(orderBy: createdAt_ASC, last: 3) {
     excerpt
     createdAt
     slug
@@ -22,6 +22,50 @@ query Articles {
   }
 }
 `
+
+export const getAllArticles = gql`
+query Articles {
+  posts(orderBy: createdAt_DESC, skip: 3) {
+    excerpt
+    createdAt
+    slug
+    title
+    author {
+      name
+      photo {
+        url
+      }
+    }
+    image {
+      url
+    }
+    categories {
+      name
+    }
+  }
+}
+`
+
+export const getFeaturedArticles = gql`
+query Articles {
+  posts(orderBy: createdAt_ASC, where: {featuredPost: true}, first: 3) {
+    createdAt
+    id
+    slug
+    title
+    content {
+      html
+    }
+    image {
+        url
+    }
+    categories {
+      name
+    }
+  }
+}
+`
+
 
 export const getAuthors = gql`
   query Authors {
@@ -103,3 +147,22 @@ export const getPostsByCategory = gql`
   }
 `
 
+export const createComment = gql`
+mutation CreateComment($name: String!, $comment: String! ,$postId: ID!) {
+  createComment(data: {name: $name, comment: $comment, post: {connect: {id: $postId}}}) {
+    id
+  }
+}
+
+`
+
+export const getComments = gql`
+query Comments($slug: String!) {
+  comments(where: {post: { slug: $slug }}, orderBy: createdAt_DESC, first: 5) {
+    id
+    name
+    comment
+  }
+}
+
+`

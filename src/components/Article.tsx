@@ -12,7 +12,7 @@ type ArticleProps = {
 
 export const Article = ({ post } : ArticleProps) => {
   return (
-    <Link href={`/${post.slug}`} className="bg-[#fff] drop-shadow-xl overflow-hidden group relative rounded-md ">
+    <Link href={`/${post.slug}`} className="bg-[#fff] drop-shadow-xl overflow-hidden group relative rounded-md group">
       <div className="flex w-full gap-3">
         <div className="w-2/5 relative h-52 overflow-hidden">
           <div className="absolute top-0 left-0 z-40 w-full h-full bg-gradient-to-t from-dark to-transparent" />
@@ -39,7 +39,7 @@ export const Article = ({ post } : ArticleProps) => {
           </div>
         </div>
         <div className="w-3/5 p-3">
-          <p className="text-dark-gray text-lg font-bold">{post.title}</p>
+          <p className="text-dark-gray text-lg font-bold transition-colors duration-200 group-hover:text-primary">{post.title}</p>
           <p className="mt-2 text-gray-400 text-sm leading-6">{post.excerpt.length <= 133 ? post.excerpt : post.excerpt.substring(1, 130) + '...' }</p>
           <div className="pt-3 text-xs font-medium flex items-center gap-2 text-dark-gray">
             <div className="flex items-center gap-1">

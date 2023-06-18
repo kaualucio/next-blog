@@ -1,6 +1,7 @@
 import { Header } from '@/components/Header'
 import './globals.css'
 import { Montserrat } from 'next/font/google'
+import { ApolloWrapper } from '@/lib/apollo-provider'
 
 const montserrat = Montserrat({ 
   subsets: ['latin'],
@@ -24,7 +25,9 @@ export default function RootLayout({
       <body className={`${montserrat.className} bg-background relative`}>
         <Header />
         <main>
-          {children}
+          <ApolloWrapper>
+            {children}
+          </ApolloWrapper>
         </main>
       </body>
     </html>
